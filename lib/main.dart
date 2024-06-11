@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widget_study/AnimatedContainer.dart';
 import 'package:widget_study/Container.dart';
 import 'package:widget_study/Drawer.dart';
 import 'package:widget_study/Expanded.dart';
@@ -55,6 +56,7 @@ class MainScreen extends StatelessWidget {
       ),
       body: ListView(
           children: [
+            makeButton(context, 'Animated Container', AnimatedContainerWidget()),
             makeButton(context, 'Tab Bar', TabBarWidget()),
             makeButton(context, 'Sliver App Bar(오류남)', SliverAppBar()),
             makeButton(context, 'Drawer(Left Slide)', DrawerWidget()),

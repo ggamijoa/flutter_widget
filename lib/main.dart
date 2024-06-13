@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:widget_study/AlertDialog.dart';
 import 'package:widget_study/AnimatedContainer.dart';
 import 'package:widget_study/Container.dart';
 import 'package:widget_study/Drawer.dart';
@@ -11,8 +12,10 @@ import 'ColumnRow.dart';
 import 'GridView.dart';
 import 'ImageAsset.dart';
 import 'MediaQuery.dart';
+import 'RichText.dart';
 import 'RoundCorner.dart';
 import 'TabBar.dart';
+import 'TextStyle.dart';
 
 void main(){
   runApp(MyApp()) ;
@@ -57,7 +60,10 @@ class MainScreen extends StatelessWidget {
       ),
       body: ListView(
           children: [
-            makeButton(context, 'Animated Container', MediaQueryWidget()),
+            makeButton(context, 'RichText(Lorem Ipsum)', RichTextWidget()),
+            makeButton(context, 'TextStyle', TextStyleWidget()),
+            makeButton(context, 'Alert Dialog', AlertDialogWidget()),
+            makeButton(context, 'MediaQuery', MediaQueryWidget()),
             makeButton(context, 'Animated Container', AnimatedContainerWidget()),
             makeButton(context, 'Tab Bar', TabBarWidget()),
             makeButton(context, 'Sliver App Bar(오류남)', SliverAppBar()),

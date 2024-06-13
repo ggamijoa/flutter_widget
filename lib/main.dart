@@ -10,6 +10,7 @@ import 'BottomNavBar.dart';
 import 'ColumnRow.dart';
 import 'GridView.dart';
 import 'ImageAsset.dart';
+import 'MediaQuery.dart';
 import 'RoundCorner.dart';
 import 'TabBar.dart';
 
@@ -56,6 +57,7 @@ class MainScreen extends StatelessWidget {
       ),
       body: ListView(
           children: [
+            makeButton(context, 'Animated Container', MediaQueryWidget()),
             makeButton(context, 'Animated Container', AnimatedContainerWidget()),
             makeButton(context, 'Tab Bar', TabBarWidget()),
             makeButton(context, 'Sliver App Bar(오류남)', SliverAppBar()),

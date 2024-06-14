@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'package:widget_study/AlertDialog.dart';
 import 'package:widget_study/AnimatedContainer.dart';
 import 'package:widget_study/Container.dart';
+import 'package:widget_study/DatePicker.dart';
 import 'package:widget_study/Drawer.dart';
 import 'package:widget_study/Expanded.dart';
 import 'package:widget_study/GestureDetector.dart';
@@ -34,7 +37,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title : 'Widget Study 2024.06.06',
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('ko', 'KR'),
+      ],
+      // DatePicker에 영향을 주기위해서
+      theme: ThemeData(
+      primaryColor: Colors.green, // 기본 색상 설정
+      colorScheme: ColorScheme.light(
+        primary: Colors.green, // 기본 색상
+        onPrimary: Colors.white, // 기본 색상 위의 텍스트 색상
+        surface: Colors.greenAccent, // 표면 색상
+        onSurface: Colors.black, // 표면 색상 위의 텍스트 색상
+      ),
+    ),
       home: MainScreen(),
     );
   }
@@ -67,6 +87,7 @@ class MainScreen extends StatelessWidget {
       body: ListView(
           children: [
             SizedBox(height: 2,),
+            makeButton(context, 'Date Picker', DatePickerWidget()),
             makeButton(context, 'Simple Slider(ProgressBar)', SimpleSliderWidget()),
             makeButton(context, 'Animated Icons', AnimatedIconsWidget()),
             makeButton(context, 'UserInput(Keyboard)', UserInputWidget()),

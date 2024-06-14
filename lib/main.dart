@@ -6,8 +6,10 @@ import 'package:widget_study/Drawer.dart';
 import 'package:widget_study/Expanded.dart';
 import 'package:widget_study/GestureDetector.dart';
 import 'package:widget_study/ListView.dart';
+import 'package:widget_study/SimpleSlider.dart';
 import 'package:widget_study/Timer.dart';
 
+import 'AnimatedIcons.dart';
 import 'BottomNavBar.dart';
 import 'ColumnRow.dart';
 import 'GridView.dart';
@@ -16,8 +18,10 @@ import 'MediaQuery.dart';
 import 'PageView.dart';
 import 'RichText.dart';
 import 'RoundCorner.dart';
+import 'Stack.dart';
 import 'TabBar.dart';
 import 'TextStyle.dart';
+import 'UserInput.dart';
 
 void main(){
   runApp(MyApp()) ;
@@ -63,6 +67,10 @@ class MainScreen extends StatelessWidget {
       body: ListView(
           children: [
             SizedBox(height: 2,),
+            makeButton(context, 'Simple Slider(ProgressBar)', SimpleSliderWidget()),
+            makeButton(context, 'Animated Icons', AnimatedIconsWidget()),
+            makeButton(context, 'UserInput(Keyboard)', UserInputWidget()),
+            makeButton(context, 'StackWidget', StackWidget()),
             makeButton(context, 'PageView', PageViewWidget()),
             makeButton(context, 'Timer', TimerWidget()),
             makeButton(context, 'RichText(Lorem Ipsum)', RichTextWidget()),

@@ -9,6 +9,7 @@ class DatePickerWidget extends StatefulWidget {
 
 class _DatePickerWidgetState extends State<DatePickerWidget> {
   DateTime _dateTime = DateTime.now() ;
+  String showDate = '' ;
 
   void _showDatePicker() async {
     await showDatePicker(
@@ -20,6 +21,9 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
     ).then((value){
       setState(() {
         _dateTime = value! ;
+        showDate = _dateTime.year.toString()+'.'+
+                   _dateTime.month.toString().padLeft(2,'0')+'.'+
+                   _dateTime.day.toString().padLeft(2,'0') ;
       });
     });
   }
@@ -32,7 +36,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(_dateTime.month.toString(),style: TextStyle(fontSize: 30),), //_dateTime.toString()
+            Text(showDate,style: TextStyle(fontSize: 30),), //_dateTime.month.toString()
             MaterialButton(
               onPressed: (){_showDatePicker();},
               color: Colors.lightBlue,

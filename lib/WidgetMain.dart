@@ -8,11 +8,15 @@ import 'package:widget_study/Expanded.dart';
 import 'package:widget_study/GestureDetector.dart';
 import 'package:widget_study/ListView.dart';
 import 'package:widget_study/SimpleSlider.dart';
+import 'package:widget_study/SlidableWidget.dart';
+import 'package:widget_study/SlideTo.dart';
 import 'package:widget_study/Timer.dart';
+import 'package:widget_study/WheelScroll.dart';
 
 import 'AnimatedIcons.dart';
 import 'BottomNavBar.dart';
 import 'ColumnRow.dart';
+import 'DragDrop.dart';
 import 'GridView.dart';
 import 'ImageAsset.dart';
 import 'MediaQuery.dart';
@@ -34,6 +38,10 @@ class WidgetMain extends StatelessWidget {
       body: ListView(
         children: [
           SizedBox(height: 2,),
+          makeButton(context, 'Drag\&Drop', DragDropWidget()),
+          makeButton(context, 'Slide To...(Pub.dev)', SlideToWidget()),
+          makeButton(context, 'Slidable Widget(Pub.dev)', SlidableWidget()),
+          makeButton(context, 'Modern Wheel Scroll', WheelScrollWidget()),
           makeButton(context, 'Time Picker', TimePickerWidget()),
           makeButton(context, 'Date Picker', DatePickerWidget()),
           makeButton(context, 'Simple Slider(ProgressBar)', SimpleSliderWidget()),
